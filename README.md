@@ -5,9 +5,8 @@ add_column :users, :email, :string, null: false
 rails db:migrate
 rails db:rollback
 add_index :users, :email, unique: true
-
 ```
-see `scheema_migrations`
+see `schema_migrations` table
 
 ## Up/down
 ```
@@ -57,11 +56,14 @@ rails db:schema:dump
 1. Always take a db snapshot before migration.
 2. Have a rough idea of how much time each migration will take.
   - You can measure migration time by using recent snapshots.
+3. Do not modify past migration on production branch.
+4. Rollback/forward only for development.
 
 ## Alternative tools
+ - https://github.com/amacneil/dbmate
  - https://github.com/golang-migrate/migrate
- - Flyway
- - LiquiBase
+ - Flyway https://flywaydb.org/
+ - LiquiBase https://www.liquibase.org/
 
 ## Supplement readings
  - https://edgeguides.rubyonrails.org/active_record_migrations.html
