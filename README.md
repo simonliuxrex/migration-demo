@@ -60,10 +60,10 @@ rails db:schema:dump
 4. Rollback/forward only for development.
 
 ## Alternative tools
- - https://github.com/amacneil/dbmate
+ - https://github.com/amacneil/dbmate This one looks like the ONE!
  - https://github.com/golang-migrate/migrate
- - Flyway https://flywaydb.org/
- - LiquiBase https://www.liquibase.org/
+ - https://flywaydb.org/
+ - https://www.liquibase.org/
 
 ## Supplement readings
  - https://edgeguides.rubyonrails.org/active_record_migrations.html
