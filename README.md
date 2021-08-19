@@ -1,3 +1,9 @@
+## What you will learn
+- A source controlled method of schema management
+- A way to migrate from non-source controlled schema.
+- Limitation and gotchas
+- Alternative tools
+
 ## Rollback/forward
 ```
 rails g migration add_email_to_users
@@ -49,12 +55,12 @@ rails db:schema:dump
 
 ## Limitations
 1. Synchronous migration
-  - Will take a long time if you are using shards.
+  - Could take a long time if you are using shards on production.
 2. `rails db:schema:dump` will not dump procedures or functions.
 
 ## Things to lookout for
-1. Always take a db snapshot before migration.
-2. Have a rough idea of how much time each migration will take.
+1. Always take a db snapshot before performing a production schema migration.
+2. Have a rough idea of how much time each migration will take, prior to migration.
   - You can measure migration time by using recent snapshots.
 3. Do not modify past migration on production branch.
 4. Rollback/forward only for development.
